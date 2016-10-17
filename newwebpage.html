@@ -1,0 +1,152 @@
+<html>
+    <head>
+        <title>Assign 4</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+        
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script type="text/javascript">
+            function getMaximum(){
+				$.ajax({
+						url:"http://localhost:3000/maxnumber",
+						method:"POST",
+						dataType: "json",
+						contentType: "Application/Json",
+						success:function(data){$('#lbl_id').text(data.max);},
+						error:function(){
+							alert("error");
+						}
+					});
+			}
+			
+			function getAverage(){
+				$.ajax({
+						url:"http://localhost:3000/averageNumber",
+						method:"POST",
+						dataType: "json",
+						contentType: "Application/Json",
+						success:function(data){$('#lbl_id_avg').text(data.avg);},
+						error:function(){
+							alert("error");
+						}
+					});
+			}
+			
+			function getEvennumber(){
+				$.ajax({
+						url:"http://localhost:3000/oneevenNumber",
+						method:"POST",
+						dataType: "json",
+						contentType: "Application/Json",
+						success:function(data){$('#lbl_id_even').text(data.result);},
+						error:function(){
+							alert("error");
+						}
+					});
+			}
+			function getallEvennumber(){
+				$.ajax({
+						url:"http://localhost:3000/allevenNumber",
+						method:"POST",
+						dataType: "json",
+						contentType: "Application/Json",
+						success:function(data){$('#lbl_id_alleven').text(data.result1);},
+						error:function(){
+							alert("error");
+						}
+					});
+			}
+			
+			
+			function getMatchonce(){
+				var stringTomatchValueonce = $("#stringTomatchonce").val();				
+					var string2=stringTomatchValueonce;
+					$.ajax({
+						url:"http://localhost:3000/checkstringonce/" + string2,
+						method: "POST",
+						dataType: "json",
+						contentType: "Application/Json",
+						success: function(data) {
+							console.log(data.result1);
+							alert("Result :" + data.result1);
+						},
+						failure: function(errMsg) {
+							alert(errMsg);
+						}
+			});
+			}
+			
+			
+			
+			
+			
+			function getMatch(){
+				var stringTomatchValue = $("#stringTomatch").val();				
+					var string1=stringTomatchValue;
+					$.ajax({
+						url:"http://localhost:3000/getTwiceString/" + string1,
+						type: "POST",
+						dataType: "json",
+						contentType: "Application/Json",
+						success: function(data) {
+							console.log(data.result);
+							alert("Result :" + data.result);
+						},
+						failure: function(errMsg) {
+							alert(errMsg);
+						}
+			});
+			}
+           
+        </script>
+
+       
+    </head>
+    <body>
+		
+        
+        <form>
+            
+           
+            <label>{83,55,32,843,177}      </label>
+            <input type="button" id="Save" value="Max no" onclick="getMaximum()" class="array"/>
+			
+            <label for="SomeTextField" id="lbl_id"></label>
+			</form>
+			<form>
+			<label>{8,5,3,9,7}      </label>
+            <input type="button" id="Average" value="Averageg no" onclick="getAverage()" class="array" />
+            
+            <label for="SomeTextField" id="lbl_id_avg"></label>
+			</form>
+			<form>
+			<label>{1,5,88,9,7}      </label>
+			<input type="button" id="Evennumber" value="Evennum" onclick="getEvennumber()" class="array" />
+            
+            <label for="SomeTextField" id="lbl_id_even"></label>
+			</form>
+			<form>
+			<label>{6,4,2,8,20}      </label>
+			<input type="button" id="allEvennumber" value="allEvennum" onclick="getallEvennumber()" class="array" />
+            
+            <label for="SomeTextField" id="lbl_id_alleven"></label>
+			</form>
+			<form>
+			<label>"harry","potter","hogwards","dumberdore"</label>
+			<br>
+			String To match:   <input type="text" name="stringTomatchonce" id="stringTomatchonce" />
+			<input type="button" id="matchonce" value="matchonce" onclick="getMatchonce()" class="array"/>
+            <label for="SomeTextField" id="lbl_matchonce"></label>
+			
+			</form>
+			<form>
+			<label>"harry","potter","potter","howards","dumberdore","harry"</label>
+			<br>
+			String To match Twice:   <input type="text" name="stringTomatch" id="stringTomatch" />
+			<input type="button" id="match" value="match" onclick="getMatch()" class="array"/>
+            <label for="SomeTextField" id="lbl_match"></label>
+            
+      	</form>    </body>
+</html>
