@@ -1,13 +1,24 @@
-<html>
+<!DOCTYPE html>
     <head>
-        <title>Assign 4</title>
+        <title>Assignment 3</title>
+		<h1 id=assign> Assignment 3 </h1>
+		<meta charset="UTF-8">
+		<style>
+		h1 {margin-left: 750px;
+			color: red;
+		}
+		input { margin-bottom: 50px; }
+		</style>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
         
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-<script type="text/javascript">
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+		<script type="text/javascript">
+		
+		
+		
             function getMaximum(){
 				$.ajax({
 						url:"http://localhost:3000/maxnumber",
@@ -79,9 +90,6 @@
 			}
 			
 			
-			
-			
-			
 			function getMatch(){
 				var stringTomatchValue = $("#stringTomatch").val();				
 					var string1=stringTomatchValue;
@@ -100,39 +108,34 @@
 			});
 			}
            
-        </script>
-
-       
+        </script>  
     </head>
     <body>
 		
-        
         <form>
-            
-           
             <label>{83,55,32,843,177}      </label>
             <input type="button" id="Save" value="Max no" onclick="getMaximum()" class="array"/>
-			
             <label for="SomeTextField" id="lbl_id"></label>
 			</form>
+			
 			<form>
 			<label>{8,5,3,9,7}      </label>
             <input type="button" id="Average" value="Averageg no" onclick="getAverage()" class="array" />
-            
             <label for="SomeTextField" id="lbl_id_avg"></label>
 			</form>
+			
 			<form>
 			<label>{1,5,88,9,7}      </label>
 			<input type="button" id="Evennumber" value="Evennum" onclick="getEvennumber()" class="array" />
-            
             <label for="SomeTextField" id="lbl_id_even"></label>
 			</form>
+			
 			<form>
 			<label>{6,4,2,8,20}      </label>
 			<input type="button" id="allEvennumber" value="allEvennum" onclick="getallEvennumber()" class="array" />
-            
             <label for="SomeTextField" id="lbl_id_alleven"></label>
 			</form>
+			
 			<form>
 			<label>"harry","potter","hogwards","dumberdore"</label>
 			<br>
@@ -148,5 +151,6 @@
 			<input type="button" id="match" value="match" onclick="getMatch()" class="array"/>
             <label for="SomeTextField" id="lbl_match"></label>
             
-      	</form>    </body>
+      	</form>    
+	</body>
 </html>
